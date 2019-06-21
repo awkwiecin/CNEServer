@@ -4,11 +4,13 @@ import akk.studio.cne.CNEServer.model.LibraryElementDTO;
 import akk.studio.cne.CNEServer.persistence.model.LibraryElement;
 import akk.studio.cne.CNEServer.persistence.repository.LibraryElementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Primary
 @Service
 public class LibraryElementServiceImpl extends BaseServiceImpl<LibraryElement, Long, LibraryElementRepository> implements LibraryElementService {
 
