@@ -25,13 +25,4 @@ public class LibraryElement extends BaseEntity {
     @Column(name = "sold")
     private boolean sold;
 
-
-    public LibraryElement(int id, String author, String title, String publisher, int yearOfPublication, boolean rented, boolean sold, boolean active) {
-        this.author = author;
-        this.title = title;
-        this.publisher = publisher;
-        this.yearOfPublication = yearOfPublication;
-        this.rented = rented;
-        this.sold = sold;
-    }
 }
