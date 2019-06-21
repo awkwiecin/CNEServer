@@ -1,19 +1,16 @@
-package akk.studio.cne.CNEServer.persistence;
+package akk.studio.cne.CNEServer.persistence.model;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "libraryBookStock")
 @Data
-public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private int id;
+public class LibraryElement extends BaseEntity {
 
     @Column(name = "author")
     private String author;
@@ -27,18 +24,14 @@ public class Book {
     private boolean rented;
     @Column(name = "sold")
     private boolean sold;
-    @Column(name = "active")
-    private boolean active;
 
 
-    public Book(int id, String author, String title, String publisher, int yearOfPublication, boolean rented, boolean sold, boolean active) {
-        this.id = id;
+    public LibraryElement(int id, String author, String title, String publisher, int yearOfPublication, boolean rented, boolean sold, boolean active) {
         this.author = author;
         this.title = title;
         this.publisher = publisher;
         this.yearOfPublication = yearOfPublication;
         this.rented = rented;
         this.sold = sold;
-        this.active = active;
     }
 }
